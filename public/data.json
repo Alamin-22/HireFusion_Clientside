@@ -1,0 +1,222 @@
+[
+    {
+      "JobTitle": "Frontend Developer",
+      "Category": "Remote",
+      "ApplicationStartDate": "2023-11-15",
+      "ApplicationEndDate": "2023-11-30",
+      "Salary": "$70,000 - $90,000",
+      "JobApplicantsNumber": 32,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "john_doe",
+      "DetailDescription": "We are looking for a talented Frontend Developer to join our remote team..."
+    },
+    {
+      "JobTitle": "Data Analyst",
+      "Category": "OnSite",
+      "ApplicationStartDate": "2023-11-10",
+      "ApplicationEndDate": "2023-11-25",
+      "Salary": "$60,000 - $80,000",
+      "JobApplicantsNumber": 25,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "jane_smith",
+      "DetailDescription": "As a Data Analyst at our office, you will be responsible for analyzing data..."
+    },
+    {
+      "JobTitle": "Software Engineer",
+      "Category": "Hybrid",
+      "ApplicationStartDate": "2023-11-12",
+      "ApplicationEndDate": "2023-11-27",
+      "Salary": "$80,000 - $100,000",
+      "JobApplicantsNumber": 40,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "robert_johnson",
+      "DetailDescription": "Join our hybrid team as a Software Engineer to work on cutting-edge projects..."
+    },
+    {
+      "JobTitle": "Graphic Designer",
+      "Category": "PartTime",
+      "ApplicationStartDate": "2023-11-14",
+      "ApplicationEndDate": "2023-11-29",
+      "Salary": "$40,000 - $50,000",
+      "JobApplicantsNumber": 15,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "susan_clark",
+      "DetailDescription": "We're seeking a part-time Graphic Designer to work on our creative projects..."
+    },
+    {
+      "JobTitle": "Product Manager",
+      "Category": "Remote",
+      "ApplicationStartDate": "2023-11-16",
+      "ApplicationEndDate": "2023-12-01",
+      "Salary": "$90,000 - $110,000",
+      "JobApplicantsNumber": 28,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "michael_adams",
+      "DetailDescription": "Join our remote team as a Product Manager to lead product development efforts..."
+    },
+    {
+      "JobTitle": "Marketing Specialist",
+      "Category": "OnSite",
+      "ApplicationStartDate": "2023-11-11",
+      "ApplicationEndDate": "2023-11-26",
+      "Salary": "$50,000 - $70,000",
+      "JobApplicantsNumber": 20,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "lisa_brown",
+      "DetailDescription": "Our OnSite team is looking for a Marketing Specialist to drive marketing campaigns..."
+    },
+    {
+      "JobTitle": "UI/UX Designer",
+      "Category": "Hybrid",
+      "ApplicationStartDate": "2023-11-13",
+      "ApplicationEndDate": "2023-11-28",
+      "Salary": "$70,000 - $90,000",
+      "JobApplicantsNumber": 36,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "david_jackson",
+      "DetailDescription": "Join our hybrid team as a UI/UX Designer to design user-friendly interfaces..."
+    },
+    {
+      "JobTitle": "Sales Representative",
+      "Category": "PartTime",
+      "ApplicationStartDate": "2023-11-17",
+      "ApplicationEndDate": "2023-12-02",
+      "Salary": "$30,000 - $40,000",
+      "JobApplicantsNumber": 12,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "emily_wilson",
+      "DetailDescription": "We're hiring part-time Sales Representatives to promote our products..."
+    },
+    {
+      "JobTitle": "Backend Developer",
+      "Category": "Remote",
+      "ApplicationStartDate": "2023-11-19",
+      "ApplicationEndDate": "2023-12-04",
+      "Salary": "$75,000 - $95,000",
+      "JobApplicantsNumber": 42,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "william_martin",
+      "DetailDescription": "We need a talented Backend Developer to join our remote development team..."
+    },
+    {
+      "JobTitle": "Content Writer",
+      "Category": "OnSite",
+      "ApplicationStartDate": "2023-11-18",
+      "ApplicationEndDate": "2023-12-03",
+      "Salary": "$45,000 - $60,000",
+      "JobApplicantsNumber": 18,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "olivia_anderson",
+      "DetailDescription": "Join our OnSite team as a Content Writer to create engaging content..."
+    },
+    {
+      "JobTitle": "Network Administrator",
+      "Category": "Hybrid",
+      "ApplicationStartDate": "2023-11-20",
+      "ApplicationEndDate": "2023-12-05",
+      "Salary": "$60,000 - $80,000",
+      "JobApplicantsNumber": 29,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "james_miller",
+      "DetailDescription": "We're seeking a Network Administrator to manage our hybrid network..."
+    },
+    {
+      "JobTitle": "Customer Support Specialist",
+      "Category": "PartTime",
+      "ApplicationStartDate": "2023-11-21",
+      "ApplicationEndDate": "2023-12-06",
+      "Salary": "$25,000 - $35,000",
+      "JobApplicantsNumber": 8,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "sophia_robinson",
+      "DetailDescription": "We need part-time Customer Support Specialists to assist our customers..."
+    },
+    {
+      "JobTitle": "Quality Assurance Tester",
+      "Category": "Remote",
+      "ApplicationStartDate": "2023-11-22",
+      "ApplicationEndDate": "2023-12-07",
+      "Salary": "$55,000 - $75,000",
+      "JobApplicantsNumber": 23,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "liam_clark",
+      "DetailDescription": "Join our remote team as a Quality Assurance Tester to test software quality..."
+    },
+    {
+      "JobTitle": "HR Manager",
+      "Category": "OnSite",
+      "ApplicationStartDate": "2023-11-23",
+      "ApplicationEndDate": "2023-12-08",
+      "Salary": "$70,000 - $90,000",
+      "JobApplicantsNumber": 31,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "ava_hall",
+      "DetailDescription": "Our OnSite team is looking for an HR Manager to oversee human resources..."
+    },
+    {
+      "JobTitle": "DevOps Engineer",
+      "Category": "Hybrid",
+      "ApplicationStartDate": "2023-11-24",
+      "ApplicationEndDate": "2023-12-09",
+      "Salary": "$80,000 - $100,000",
+      "JobApplicantsNumber": 37,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "noah_adams",
+      "DetailDescription": "We're hiring a DevOps Engineer to optimize our hybrid infrastructure..."
+    },
+    {
+      "JobTitle": "Marketing Manager",
+      "Category": "PartTime",
+      "ApplicationStartDate": "2023-11-25",
+      "ApplicationEndDate": "2023-12-10",
+      "Salary": "$50,000 - $70,000",
+      "JobApplicantsNumber": 21,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "riley_martin",
+      "DetailDescription": "Join us as a part-time Marketing Manager to lead marketing efforts..."
+    },
+    {
+      "JobTitle": "Full Stack Developer",
+      "Category": "Remote",
+      "ApplicationStartDate": "2023-11-26",
+      "ApplicationEndDate": "2023-12-11",
+      "Salary": "$85,000 - $105,000",
+      "JobApplicantsNumber": 45,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "amelia_brown",
+      "DetailDescription": "We're seeking a talented Full Stack Developer to join our remote development team..."
+    },
+    {
+      "JobTitle": "Data Scientist",
+      "Category": "OnSite",
+      "ApplicationStartDate": "2023-11-27",
+      "ApplicationEndDate": "2023-12-12",
+      "Salary": "$70,000 - $90,000",
+      "JobApplicantsNumber": 26,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "logan_davis",
+      "DetailDescription": "As a Data Scientist at our office, you will analyze data to drive insights..."
+    },
+    {
+      "JobTitle": "UI Designer",
+      "Category": "Hybrid",
+      "ApplicationStartDate": "2023-11-28",
+      "ApplicationEndDate": "2023-12-13",
+      "Salary": "$60,000 - $80,000",
+      "JobApplicantsNumber": 34,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "mia_johnson",
+      "DetailDescription": "Join our hybrid team as a UI Designer to create intuitive user interfaces..."
+    },
+    {
+      "JobTitle": "Customer Service Representative",
+      "Category": "PartTime",
+      "ApplicationStartDate": "2023-11-29",
+      "ApplicationEndDate": "2023-12-14",
+      "Salary": "$30,000 - $40,000",
+      "JobApplicantsNumber": 14,
+      "JobBanner": "https://i.ibb.co/ynvfh8v/job-board-software.png",
+      "LoggedInUser": "jackson_thomas",
+      "DetailDescription": "We need part-time Customer Service Representatives to assist our customers..."
+    }
+  ]
