@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxios from "../Hooks/useAxios";
-import AllJobCard from "../Components/JobsByCategory/JobCardByCategory/AllJobCard";
+import AllJobPageCard from "../Components/AllPageComponents/AllJobPageCard";
 
 const All_jobs = () => {
     const axios = useAxios();
@@ -16,10 +16,12 @@ const All_jobs = () => {
     }, [axios])
     return (
         <div className="max-w-7xl my-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 gap-7">
+                {
+                    allJobs.map(job => <AllJobPageCard key={job._id} job={job}></AllJobPageCard>)
+                }
+            </div>
 
-            {
-                allJobs.map(job => <AllJobCard job={job}></AllJobCard> )
-            }
 
         </div>
     );

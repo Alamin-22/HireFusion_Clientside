@@ -5,6 +5,7 @@ import OnSiteJobs from '../JobsByCategory/OnSiteJobs';
 import RemoteJobs from '../JobsByCategory/RemoteJobs';
 import PartTimeJobs from '../JobsByCategory/PartTimeJobs';
 import FeaturedJob from './FeaturedJob';
+import { Link } from 'react-router-dom';
 
 const HomeTab = () => {
     return (
@@ -34,7 +35,7 @@ const HomeTab = () => {
                                 <PartTimeJobs></PartTimeJobs>
                             </TabPanel>
                             <div className='text-center'>
-                                <button className='btn btn-primary my-6 '>Explore All Jobs</button>
+                                <Link to={"/all_jobs"}><button className='btn btn-primary my-6 '>Explore All Jobs</button></Link>
                             </div>
                         </div>
                     </div>

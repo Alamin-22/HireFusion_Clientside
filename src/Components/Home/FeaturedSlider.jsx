@@ -10,7 +10,7 @@ const FeaturedSlider = () => {
         <div>
             <Swiper spaceBetween={30} centeredSlides={true} autoplay={{ delay: 2500, disableOnInteraction: false, }}
                 pagination={{ clickable: true, }} navigation={true} modules={[Autoplay, Pagination, Navigation]}
-                classNameName="mySwiper"
+                className="mySwiper"
             >
                 <SwiperSlide>
                     <div className="card w-96 bg-base-100 shadow-xl">
@@ -41,7 +41,7 @@ const FeaturedSlider = () => {
                             <p className='text-left'>Applied : <span className=''>26</span></p>
                             <div className="card-actions ">
                                 <button className="btn btn-primary">Details</button>
-                                <p>Posted By: <br /> Eva Mollik</p>
+                                <p>Posted By: <br /> Mahmuda</p>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import Home from "../Pages/Home";
 import Error from "../Pages/Error";
-import All_jobs from "../Pages/All_jobs";
+
 import Add_Job from "../Pages/Add_Job";
 import Applied_Jobs from "../Pages/Applied_Jobs";
 import My_Job from "../Pages/My_Job";
@@ -11,6 +11,8 @@ import Profile from "../Pages/Profile";
 import Login from "../Pages/HandleLogin/Login";
 import Register from "../Pages/HandleLogin/Register";
 import PrivateRoute from "../Private/PrivateRoute";
+import All_jobs from "../Pages/All_jobs";
+import JobDetails from "../Components/Details/JobDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Add_Job /></PrivateRoute>,
             },
             {
+                path: `/jobDetails/:id`,
+                element: <PrivateRoute><JobDetails /></PrivateRoute>
+            },
+            {
                 path: "/applied_jobs",
                 element: <PrivateRoute><Applied_Jobs /></PrivateRoute>,
             },
@@ -43,20 +49,20 @@ const router = createBrowserRouter([
                 element: <Blogs />
             },
             {
-                path:"/profile",
-                element:<Profile/>,
+                path: "/profile",
+                element: <Profile />,
             },
             {
-                path:"/login",
-                element:<Login/>
+                path: "/login",
+                element: <Login />
             },
             {
-                path:"/register",
-                element:<Register/>
+                path: "/register",
+                element: <Register />
             },
             {
-                path:"/user",
-                element:<Profile></Profile>
+                path: "/user",
+                element: <Profile></Profile>
             }
         ]
     },

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 const AllJobCard = ({ job }) => {
-    const { JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, DetailDescription } = job;
+    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser } = job;
     return (
         <div className='flex justify-center'>
             <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -24,7 +25,7 @@ const AllJobCard = ({ job }) => {
                             <p>Applied: <span className='font-medium'>{JobApplicantsNumber}</span></p>
                         </div>
                         <div className='flex flex-row-reverse justify-between md:grid'>
-                            <button className='btn btn-sm btn-primary'>Details</button>
+                            <Link to={`/jobDetails/${_id}`} className='btn btn-sm btn-primary'>Details</Link>
                             <p>Posted By: <span className='font-semibold'>{LoggedInUser}</span></p>
                         </div>
                     </div>

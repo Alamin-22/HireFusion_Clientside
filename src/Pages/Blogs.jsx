@@ -68,7 +68,7 @@ const Blogs = () => {
                         <p className="mt-2 text-gray-600 dark:text-gray-300">With Express.js, you can easily set up a web server to listen for incoming HTTP requests. It abstracts away many of the low-level details of working with the HTTP protocol, making it simpler to handle requests and responses.</p>
 
                         <span className="font-bold">Database Integration:</span>
-                        <p className="mt-2 text-gray-600 dark:text-gray-300">Express.js doesn't dictate which database you should use, but it integrates well with databases such as MongoDB, PostgreSQL, MySQL, and more. You can use database libraries or Object-Relational Mapping (ORM) tools with Express to interact with your data.</p> <br />
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">Express.js does not dictate which database you should use, but it integrates well with databases such as MongoDB, PostgreSQL, MySQL, and more. You can use database libraries or Object-Relational Mapping (ORM) tools with Express to interact with your data.</p> <br />
                         <span className="font-bold">Middleware Ecosystem:</span>
                         <p className="mt-2 text-gray-600 dark:text-gray-300">There is a vast ecosystem of third-party middleware that extends the functionality of Express.js. These middleware packages can handle tasks such as user authentication, request logging, error handling, and more.</p>
 
