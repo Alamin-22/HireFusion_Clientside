@@ -18,7 +18,7 @@ const All_jobs = () => {
         <div className="max-w-7xl my-3">
 
             {
-                allJobs.map(job => )
+                allJobs.map(job => <AllJobCard job={job}></AllJobCard> )
             }
 
         </div>
