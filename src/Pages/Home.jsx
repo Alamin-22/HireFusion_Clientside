@@ -1,3 +1,4 @@
+
 import Header from "../Components/Home/Header";
 import HomeTab from "../Components/Home/HomeTab";
 
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <HomeTab></HomeTab>
+
         </div>
     );
 };

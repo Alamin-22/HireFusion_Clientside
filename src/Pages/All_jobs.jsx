@@ -1,8 +1,26 @@
+import { useEffect, useState } from "react";
+import useAxios from "../Hooks/useAxios";
+import AllJobCard from "../Components/JobsByCategory/JobCardByCategory/AllJobCard";
 
 const All_jobs = () => {
+    const axios = useAxios();
+    const [allJobs, setAllJobs] = useState([]);
+    useEffect(() => {
+        axios.get('/jobsdata')
+            .then(res => {
+                setAllJobs(res.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [axios])
     return (
-        <div>
-               <h1>This is the alljobs container</h1>
+        <div className="max-w-7xl my-3">
+
+            {
+                allJobs.map(job => )
+            }
+
         </div>
     );
 };

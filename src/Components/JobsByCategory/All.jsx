@@ -18,7 +18,7 @@ const All = () => {
     }, [axios])
     return (
         <div>
-            <div className=" space-y-5">
+            <div className=" space-y-1">
                 {
                     allJobs.slice(0,8).map(job => <AllJobCard key={job._id} job={job}></AllJobCard>)
                 }
