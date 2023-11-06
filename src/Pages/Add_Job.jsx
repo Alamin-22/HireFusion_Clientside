@@ -51,7 +51,7 @@ const Add_Job = () => {
                                 </label>
                                 <label className="input-group">
                                     <select name="category" className="select select-bordered w-full" required>
-                                        <option value="" disabled selected>Select Category</option>
+                                        <option disabled >Select Category</option>
                                         <option value="OnSite">On Site</option>
                                         <option value="Remote">Remote</option>
                                         <option value="Hybrid">Hybrid</option>

@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import useAuth from '../../Hooks/useAuth';
 const AllJobPageCard = ({ job }) => {
+    const { user } = useAuth();
     const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser } = job;
+
+    const handleViewDetails = () => {
+        if (!user) {
+            Swal.fire("Sorry!!", "You have to login for visit this page", "info")
+        }
+    }
+
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl">
@@ -17,9 +27,9 @@ const AllJobPageCard = ({ job }) => {
                     <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200'>Applied: <span>{JobApplicantsNumber}</span></p>
                     <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200'>Application Start: <span>{ApplicationStartDate}</span></p>
                     <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200'>Application End: <span>{ApplicationEndDate}</span></p>
-                    
+
                     <div className="card-actions justify-between">
-                        <Link to={`/jobDetails/${_id}`} className="btn btn-primary btn-sm">Details</Link>
+                        <Link onClick={handleViewDetails} to={`/jobDetails/${_id}`} className="btn btn-primary btn-sm">Details</Link>
                         <div >Posted By: {LoggedInUser}</div>
                     </div>
                 </div>

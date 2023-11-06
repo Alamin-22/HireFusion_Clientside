@@ -1,7 +1,17 @@
-import useAuth from "../../Hooks/useAuth";
 
-const ApplyForm = () => {
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
+import { useState } from "react";
+
+// eslint-disable-next-line react/prop-types
+const ApplyForm = ({ _id, JobApplicantsNumber }) => {
     const { user } = useAuth();
+    const axios = useAxios()
+
+    const [applicants, setApplicants] = useState(JobApplicantsNumber)
+
+
 
     const handleApply = e => {
         e.preventDefault();
@@ -9,8 +19,33 @@ const ApplyForm = () => {
         const name = form.name.value;
         const email = form.email.value;
         const resume = form.resume.value;
-        const AppliedInfo = { name, email, resume };
+        const AppliedInfo = { JobId: _id, AppliedCount: applicants, name, email, resume };
         console.log(AppliedInfo)
+        // send data to the appliedCollection
+
+
+        axios.post("/applied", AppliedInfo)
+            .then(res => {
+                Swal.fire("Submitted!", "Application Successfully Submitted", "success")
+                console.log(res.data)
+                setApplicants(applicants => applicants + 1);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+        // fetch("http://localhost:5000/api/v1/applied", {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type": "application/json",
+        //     },
+        //     body: JSON.stringify(AppliedInfo)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //     })
+
     }
 
 
