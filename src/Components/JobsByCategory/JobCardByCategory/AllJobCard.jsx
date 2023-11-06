@@ -1,7 +1,21 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
+import Swal from 'sweetalert2';
 const AllJobCard = ({ job }) => {
+
     const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser } = job;
+
+    const { user } = useAuth();
+
+    const handleViewDetails = () => {
+        if (!user) {
+            Swal.fire("Sorry!!", "You have to login for visit this page", "info")
+        }
+    }
+
+
+
     return (
         <div className='flex justify-center'>
             <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -25,7 +39,7 @@ const AllJobCard = ({ job }) => {
                             <p>Applied: <span className='font-medium'>{JobApplicantsNumber}</span></p>
                         </div>
                         <div className='flex flex-row-reverse justify-between md:grid'>
-                            <Link to={`/jobDetails/${_id}`} className='btn btn-sm btn-primary'>Details</Link>
+                            <Link onClick={handleViewDetails} to={`/jobDetails/${_id}`} className='btn btn-sm btn-primary'>Details</Link>
                             <p>Posted By: <span className='font-semibold'>{LoggedInUser}</span></p>
                         </div>
                     </div>

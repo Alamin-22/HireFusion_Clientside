@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import ApplyForm from "../Form/ApplyForm";
 
 const JobDetails = () => {
     const job = useLoaderData();
@@ -42,14 +43,18 @@ const JobDetails = () => {
                         <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Posted By: {LoggedInUser}</p>
 
                     </div>
-                    <button className="btn btn-primary ">Apply</button>
+                    {/* <button className="btn btn-primary ">Apply</button> */}
+                    <button className="btn btn-primary" onClick={() => document.getElementById('my_modal_3').showModal()}>Apply</button>
+                    <dialog id="my_modal_3" className="modal">
+                        <div className="modal-box">
+                            <form method="dialog">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            </form>
+                            <ApplyForm></ApplyForm>
+                        </div>
+                    </dialog>
                 </div>
-                {/* <div className="flex items-center justify-end mt-4">
-                    <div className="flex items-center">
-                        <img className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80" alt="avatar" />
-                        <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-200" tabIndex="0" role="link">Khatab wedaa</a>
-                    </div>
-                </div> */}
             </div>
         </div>
     );

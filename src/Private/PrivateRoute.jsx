@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import Swal from 'sweetalert2';
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth();
     const location = useLocation();
     // console.log(location.pathname)
+    
+
+
 
     if (loading) {
         return (
@@ -29,7 +33,7 @@ const PrivateRoute = ({ children }) => {
                     <p className="w-full h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                     <p className="w-64 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                     <p className="w-4/5 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                    
+
                 </div>
             </div>
         )

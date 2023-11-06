@@ -16,6 +16,10 @@ const All = () => {
                 console.log(error)
             })
     }, [axios])
+
+    
+
+
     return (
         <div>
             <div className=" space-y-1">

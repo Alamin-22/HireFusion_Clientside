@@ -9,6 +9,7 @@ const Navbar = () => {
     const { user, logOut } = useAuth();
 
 
+
     const NavbarLinks = <>
         <NavLink to={"/"} className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "  py-3 px-3 text-lg text-[#4480a8] " : "py-3 px-3 hover:text-[#4480a8] text-lg hover:bg-gray-200 rounded-lg"
