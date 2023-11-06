@@ -13,10 +13,10 @@ const AllJobPageCard = ({ job }) => {
                         {JobTitle}
                         <div className="badge badge-accent">{Category}</div>
                     </h2>
-                    <p className='text-lg'>Salary: <span>{Salary}</span></p>
-                    <p className='text-lg'>Applied: <span>{JobApplicantsNumber}</span></p>
-                    <p className='text-lg'>Application Start: <span>{ApplicationStartDate}</span></p>
-                    <p className='text-lg'>Application End: <span>{ApplicationEndDate}</span></p>
+                    <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200  '>Salary: <span>{Salary}</span></p>
+                    <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200'>Applied: <span>{JobApplicantsNumber}</span></p>
+                    <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200'>Application Start: <span>{ApplicationStartDate}</span></p>
+                    <p className='text-lg text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200'>Application End: <span>{ApplicationEndDate}</span></p>
                     
                     <div className="card-actions justify-between">
                         <Link to={`/jobDetails/${_id}`} className="btn btn-primary btn-sm">Details</Link>

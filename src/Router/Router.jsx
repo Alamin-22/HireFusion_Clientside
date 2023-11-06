@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import Home from "../Pages/Home";
 import Error from "../Pages/Error";
-
 import Add_Job from "../Pages/Add_Job";
 import Applied_Jobs from "../Pages/Applied_Jobs";
 import My_Job from "../Pages/My_Job";
@@ -34,7 +33,8 @@ const router = createBrowserRouter([
             },
             {
                 path: `/jobDetails/:id`,
-                element: <PrivateRoute><JobDetails /></PrivateRoute>
+                element: <PrivateRoute><JobDetails /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/jobsdata/${params.id}`),
             },
             {
                 path: "/applied_jobs",
