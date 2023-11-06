@@ -1,9 +1,30 @@
 import { useLoaderData } from "react-router-dom";
 import ApplyForm from "../Form/ApplyForm";
+import { useState } from "react";
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 
 const JobDetails = () => {
     const job = useLoaderData();
+    const { user } = useAuth();
+    const { displayName } = user;
     const { _id, JobTitle, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, DetailDescription } = job;
+
+
+    const [isApplicationOpen, setApplicationOpen] = useState(false);
+    const currentDate = Date.now();
+
+    const handleApplyClick = () => {
+        if (currentDate > new Date(ApplicationEndDate)) {
+            Swal.fire("Time End", "The application deadline for this job has passed. You cannot apply Now", "error")
+        } else if (LoggedInUser === displayName) {
+            Swal.fire("Sorry!", "Employers cannot apply for their own job listings.", "error")
+
+        } else {
+            setApplicationOpen(true);
+        }
+    };
+
     return (
         <div>
             <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -20,7 +41,7 @@ const JobDetails = () => {
                     </div>
                     <div className="avatar">
                         <div className="w-24 rounded-full">
-                            <img src="https://i.ibb.co/gwD0nQs/LogoJob.png" />
+                            <img src={CompanyLogo} />
                         </div>
                     </div>
                 </div>
@@ -44,16 +65,25 @@ const JobDetails = () => {
 
                     </div>
                     {/* <button className="btn btn-primary ">Apply</button> */}
-                    <button className="btn btn-primary" onClick={() => document.getElementById('my_modal_3').showModal()}>Apply</button>
-                    <dialog id="my_modal_3" className="modal">
-                        <div className="modal-box">
-                            <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                            </form>
-                            <ApplyForm></ApplyForm>
-                        </div>
-                    </dialog>
+                    <button className="btn btn-primary" onClick={handleApplyClick}>
+                        Apply
+                    </button>
+                    {isApplicationOpen && (
+                        <dialog id="my_modal_3" className="modal" open>
+                            <div className="modal-box">
+                                <form method="dialog">
+                                    <button
+                                        className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                                        onClick={() => setApplicationOpen(false)}
+                                    >
+                                        ✕
+                                    </button>
+                                </form>
+                                <ApplyForm jobId={_id} />
+                            </div>
+                        </dialog>
+                    )}
+
                 </div>
             </div>
         </div>
@@ -61,3 +91,8 @@ const JobDetails = () => {
 };
 
 export default JobDetails;
+
+
+
+
+
