@@ -58,6 +58,8 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
+    
+
     // send the value to the Context
     const value = {
         user, loading,

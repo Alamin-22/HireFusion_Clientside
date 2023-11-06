@@ -8,7 +8,7 @@ const JobDetails = () => {
     const job = useLoaderData();
     const { user } = useAuth();
     const { displayName } = user;
-    const { _id , JobTitle, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, DetailDescription } = job;
+    const { _id , JobTitle, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner , LoggedInUser, DetailDescription } = job;
 
 
     const [isApplicationOpen, setApplicationOpen] = useState(false);
@@ -79,7 +79,8 @@ const JobDetails = () => {
                                         ✕
                                     </button>
                                 </form>
-                                <ApplyForm JobApplicantsNumber={JobApplicantsNumber} _id={_id} />
+                                <ApplyForm job={job}   />
+
                             </div>
                         </dialog>
                     )}

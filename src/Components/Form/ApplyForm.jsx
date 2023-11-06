@@ -1,15 +1,25 @@
+import PropTypes from 'prop-types';
 
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { useState } from "react";
+import moment from "moment";
 
 // eslint-disable-next-line react/prop-types
-const ApplyForm = ({ _id, JobApplicantsNumber }) => {
+const ApplyForm = ({ job }) => {
     const { user } = useAuth();
     const axios = useAxios()
-
+    const { displayName, email } = user;
+    const { _id, JobTitle, CompanyLogo, Category, Salary, JobApplicantsNumber, } = job;
     const [applicants, setApplicants] = useState(JobApplicantsNumber)
+
+    const currentDate = moment();
+    const SubmitDate = currentDate.format('DD-MM-YYYY');
+
+
+
+
 
 
 
@@ -19,7 +29,7 @@ const ApplyForm = ({ _id, JobApplicantsNumber }) => {
         const name = form.name.value;
         const email = form.email.value;
         const resume = form.resume.value;
-        const AppliedInfo = { JobId: _id, AppliedCount: applicants, name, email, resume };
+        const AppliedInfo = { JobId: _id, CompanyLogo: CompanyLogo, Category: Category, JobTitle: JobTitle, SubmittedDate: SubmitDate, Salary, AppliedCount: applicants, name, email, resume };
         console.log(AppliedInfo)
         // send data to the appliedCollection
 
@@ -60,13 +70,13 @@ const ApplyForm = ({ _id, JobApplicantsNumber }) => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="Name" name="name" placeholder="name" defaultValue={user.displayName} className="input input-bordered" required />
+                            <input type="Name" name="name" placeholder="name" defaultValue={displayName} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" defaultValue={user.email} className="input input-bordered" required />
+                            <input type="email" name="email" placeholder="email" defaultValue={email} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -85,5 +95,12 @@ const ApplyForm = ({ _id, JobApplicantsNumber }) => {
         </div>
     );
 };
+ApplyForm.propTypes = {
+    job: PropTypes.object.isRequired,
+};
 
 export default ApplyForm;
+
+
+
+
