@@ -8,7 +8,7 @@ const JobDetails = () => {
     const job = useLoaderData();
     const { user } = useAuth();
     const { displayName } = user;
-    const { _id , JobTitle, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner , LoggedInUser, DetailDescription } = job;
+    const {  JobTitle, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner , LoggedInUser, DetailDescription } = job;
 
 
     const [isApplicationOpen, setApplicationOpen] = useState(false);

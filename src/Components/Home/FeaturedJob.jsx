@@ -8,7 +8,7 @@ const FeaturedJob = () => {
                 <FeaturedSlider></FeaturedSlider>
             </section>
             <div className=" w-full mt-14">
-                <h1 className="text-2xl">Add will added there</h1>
+                <h1 className="text-lg text-center">Add will be added here</h1>
             </div>
         </div>
     );
