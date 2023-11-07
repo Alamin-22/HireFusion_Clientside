@@ -1,8 +1,10 @@
 import moment from 'moment';
+import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     return (
         <div>
+            <Helmet><title>Hire Fusion | Blogs</title></Helmet>
             <div className="flex flex-col lg:flex-row gap-10 justify-center m-4 my-10">
                 {/* blog 1 */}
                 <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">

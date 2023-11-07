@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import useAxios from "../Hooks/useAxios";
 import AppliedTblRow from "../Components/AppliedComponents/AppliedTblRow";
+import { Helmet } from "react-helmet-async";
 
 const Applied_Jobs = () => {
     const { user } = useAuth();
@@ -24,6 +25,8 @@ const Applied_Jobs = () => {
 
     return (
         <div>
+            <Helmet><title>Hire Fusion | Applied Jobs</title></Helmet>
+
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

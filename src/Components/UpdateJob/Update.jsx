@@ -4,6 +4,7 @@ import useAxios from "../../Hooks/useAxios";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
+import { Helmet } from "react-helmet-async";
 
 
 const Update = () => {
@@ -63,6 +64,7 @@ const Update = () => {
     }
     return (
         <div>
+            <Helmet><title>Hire Fusion | Update</title></Helmet>
             <div className="max-w-4xl mx-auto shadow-2xl">
                 <form onSubmit={HandleAddJob} className=" bg-[#a6faf02d] " >
                     <div className="p-3 ">

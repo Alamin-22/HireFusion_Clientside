@@ -3,6 +3,7 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -45,6 +46,7 @@ const Register = () => {
 
     return (
         <div >
+            <Helmet><title>Hire Fusion | Register</title></Helmet>
             <div className="flex flex-wrap w-full">
                 <div className="flex flex-col w-full md:w-1/2">
                     <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">

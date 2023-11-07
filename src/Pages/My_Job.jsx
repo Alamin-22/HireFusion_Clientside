@@ -3,6 +3,7 @@ import useAxios from "../Hooks/useAxios";
 import useAuth from "../Hooks/useAuth";
 import MyJobTableRow from "../Components/AppliedComponents/MyJobTableRow";
 import Swal from 'sweetalert2';
+import { Helmet } from "react-helmet-async";
 
 const My_Job = () => {
     const { user } = useAuth();
@@ -55,6 +56,7 @@ const My_Job = () => {
 
     return (
         <div>
+            <Helmet><title>Hire Fusion | My Jobs</title></Helmet>
             {allPosted.length == 0 ?
                 <> <h1 className="text-3xl text-center flex justify-center h-[60vh] items-center">You have not Posted any Job Yet</h1> </>
                 :

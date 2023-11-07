@@ -4,6 +4,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import moment from "moment";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
     const job = useLoaderData();
@@ -32,6 +33,7 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet><title>Hire Fusion | Job Details</title></Helmet>
             <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
                 <figure >
                     <img src={JobBanner} alt="job Related banner" className=" mx-auto" />

@@ -3,6 +3,7 @@ import useAxios from "../Hooks/useAxios";
 import AllJobPageCard2 from "../Components/AllPageComponents/AllJobPageCard2";
 import LoadingSk from "../Components/loading/LoadingSk";
 import { GoSearch } from 'react-icons/go';
+import { Helmet } from "react-helmet-async";
 const All_jobs = () => {
     const axios = useAxios();
     const [allJobs, setAllJobs] = useState([]);
@@ -19,6 +20,8 @@ const All_jobs = () => {
     return (
 
         <div>
+            <Helmet><title>Hire Fusion | All Jobs</title></Helmet>
+
             {
                 allJobs.length == 0 ?
                     <> <LoadingSk></LoadingSk> </>

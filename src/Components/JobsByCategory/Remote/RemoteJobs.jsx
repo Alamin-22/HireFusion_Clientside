@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAxios from "../../../Hooks/useAxios";
 import AllJobCard from "../JobCardByCategory/AllJobCard";
+import { Helmet } from "react-helmet-async";
 
 const RemoteJobs = () => {
 
@@ -19,6 +20,7 @@ const RemoteJobs = () => {
     }, [axios])
     return (
         <div className="space-y-1">
+            <Helmet><title>Hire Fusion | Remote</title></Helmet>
             {
                 remoteJobs?.slice(0, 8).map(job => <AllJobCard key={job._id} job={job}></AllJobCard>)
             }
