@@ -31,7 +31,7 @@ const AllJobCard = ({ job }) => {
                     </div>
                     <div className='md:flex  md:space-x-10'>
                         <div className='text-left'>
-                            <p>Posting Date: <span className='font-medium'>{ApplicationStartDate}</span></p>
+                            <p>Application Start: <span className='font-medium'>{ApplicationStartDate}</span></p>
                             <p>Application Deadline: <span className='font-medium'>{ApplicationEndDate}</span></p>
                         </div>
                         <div className='text-left'>

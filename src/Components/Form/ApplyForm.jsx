@@ -20,9 +20,6 @@ const ApplyForm = ({ job }) => {
 
 
 
-
-
-
     const handleApply = e => {
         e.preventDefault();
         const form = e.target;

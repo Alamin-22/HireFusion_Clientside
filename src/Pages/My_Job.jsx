@@ -3,6 +3,7 @@ import useAxios from "../Hooks/useAxios";
 import useAuth from "../Hooks/useAuth";
 import MyJobTableRow from "../Components/AppliedComponents/MyJobTableRow";
 import Swal from 'sweetalert2';
+
 const My_Job = () => {
     const { user } = useAuth();
     const axios = useAxios();
@@ -51,30 +52,35 @@ const My_Job = () => {
         });
     }
 
-    
+
     return (
         <div>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>Job Id</th>
-                            <th>Company</th>
-                            <th>Job</th>
-                            <th>Category</th>
-                            <th>Salary</th>
-                            <th>Applied</th>
-                            <th>Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            allPosted?.map(jobCard => <MyJobTableRow key={jobCard._id} handleDelete={handleDelete} jobCard={jobCard}></MyJobTableRow>)
-                        }
-                    </tbody>
-                </table>
-            </div>
+            {allPosted.length == 0 ?
+                <> <h1 className="text-3xl text-center flex justify-center h-[60vh] items-center">You have not Posted any Job Yet</h1> </>
+                :
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>Job Id</th>
+                                <th>Company</th>
+                                <th>Job</th>
+                                <th>Category</th>
+                                <th>Salary</th>
+                                <th>Applied</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                allPosted?.map(jobCard => <MyJobTableRow key={jobCard._id} handleDelete={handleDelete} jobCard={jobCard}></MyJobTableRow>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+
         </div>
     );
 };
