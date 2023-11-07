@@ -27,7 +27,7 @@ const MyJobTableRow = ({ jobCard, handleDelete }) => {
             <td>{JobApplicantsNumber}</td>
             <td>
                 <div className="join join-vertical space-y-1">
-                    <Link to={`update/_id`}><button className="btn btn-outline  btn-success btn-sm">Update</button></Link>
+                    <Link to={`/updatejob/${_id}`}><button className="btn btn-outline  btn-success btn-sm">Update</button></Link>
                     <button onClick={() => handleDelete(_id)} className="btn btn-outline  btn-secondary btn-sm">Delete</button>
                 </div>
             </td>
