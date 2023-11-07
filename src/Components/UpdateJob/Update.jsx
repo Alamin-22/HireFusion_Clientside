@@ -1,0 +1,164 @@
+import { useLoaderData } from "react-router-dom";
+
+const Update = () => {
+    const Job = useLoaderData()
+    const { JobTitle, postedEmail, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, DetailDescription } = Job;
+
+
+
+    return (
+        <div>
+            <div className="max-w-4xl mx-auto shadow-2xl">
+                <form onSubmit={HandleAddJob} className=" bg-[#a6faf02d] " >
+                    <div className="p-3 ">
+                        <h1 className="text-3xl text-center font-bold">Job Description Form</h1>
+                        {/*Title and Category */}
+                        <div className="md:flex mb-8 gap-4">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Title of the Job</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="title" placeholder="Title of the Job" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Category</span>
+                                </label>
+                                <label className="input-group">
+                                    <select name="category" className="select select-bordered w-full" required>
+                                        <option disabled >Select Category</option>
+                                        <option value="OnSite">On Site</option>
+                                        <option value="Remote">Remote</option>
+                                        <option value="Hybrid">Hybrid</option>
+                                        <option value="PartTime">Part Time</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        {/* form Date row */}
+                        {/* <div className=" flex md:flex mb-8 gap-4">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text"> Application Start</span>
+                                </label>
+                                <label className="input-group ">
+                                    <DatePicker name="start"
+                                        className="input cursor-pointer input-bordered w-[95%]  md:w-[364px] lg:w-[428px]" placeholderText="DD/MM/YYYY" selected={startDate} onChange={(date) => setStartDate(date)} />
+                                </label>
+                            </div>
+
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text"> Application Deadline</span>
+                                </label>
+                                <label className="input-group ">
+                                    <DatePicker name="deadline"
+                                        className="input cursor-pointer input-bordered w-[95%]  md:w-[364px] lg:w-[428px]" placeholderText="DD/MM/YYYY" selected={startDate} onChange={(date) => setStartDate(date)} />
+                                </label>
+                            </div>
+                        </div> */}
+                        <div className="flex md:flex mb-8 gap-4">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Application Start</span>
+                                </label>
+                                <label className="input-group">
+                                    <DatePicker name="start" className="input cursor-pointer input-bordered w-[95%] md:w-[364px] lg:w-[428px]"
+                                        placeholderText="MM/DD/YYYY"
+                                        selected={startDate} onChange={(date) => setStartDate(date)}
+                                    />
+                                </label>
+                            </div>
+
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Application Deadline</span>
+                                </label>
+                                <label className="input-group">
+                                    <DatePicker name="deadline" className="input cursor-pointer input-bordered w-[95%] md:w-[364px] lg:w-[428px]"
+                                        placeholderText="MM/DD/YYYY" selected={deadlineDate} onChange={(date) => setDeadlineDate(date)}
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        {/* form Salary row */}
+                        <div className="md:flex mb-8">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Salary range</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="salary" placeholder="$70,000 - $90,000" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                            <div className="form-control md:w-1/2 md:ml-4">
+                                <label className="label">
+                                    <span className="label-text">Job Applicants Number</span>
+                                </label>
+                                <label className="input-group">
+                                    <input className="input input-bordered w-full" required
+                                        type="number"
+                                        name="jobApplicants"
+                                        
+                                        readOnly // Make the input field read-only
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        {/* form Job banner and Count row */}
+                        <div className="md:flex mb-8 gap-4">
+                            <div className="form-control  md:w-1/2 ">
+                                <label className="label">
+                                    <span className="label-text">Job Banner</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                            <div className="form-control md:w-1/2  ">
+                                <label className="label">
+                                    <span className="label-text">Company Logo</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="logo" placeholder="Company Logo Url" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                        </div>
+                        <div className="md:flex mb-8 gap-4">
+                            <div className="form-control  md:w-1/2 ">
+                                <label className="label">
+                                    <span className="label-text">Company Slogan</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="CompanySlogan" placeholder="Company Slogan...." className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                            <div className="form-control md:w-1/2  ">
+                                <label className="label">
+                                    <span className="label-text">Logged In User Name</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="userName" placeholder="Logged In User Name" className="input input-bordered w-full" defaultValue={user.displayName} required />
+                                </label>
+                            </div>
+                        </div>
+                        <div className="form-control ">
+                            <label className="label">
+                                <span className="label-text">Job Description</span>
+                            </label>
+                            <label className="input-group">
+                                <textarea className="textarea textarea-bordered w-full h-64" name="details" required placeholder="Write Job Description........"></textarea>
+                            </label>
+                        </div>
+                        <input type="submit" value="Post Job" className="btn btn-primary my-3 btn-block " />
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
+};
+
+export default Update;

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const MyJobTableRow = ({ jobCard, handleDelete }) => {
@@ -26,7 +27,7 @@ const MyJobTableRow = ({ jobCard, handleDelete }) => {
             <td>{JobApplicantsNumber}</td>
             <td>
                 <div className="join join-vertical space-y-1">
-                    <button className="btn btn-outline  btn-success btn-sm">Update</button>
+                    <Link to={`update/_id`}><button className="btn btn-outline  btn-success btn-sm">Update</button></Link>
                     <button onClick={() => handleDelete(_id)} className="btn btn-outline  btn-secondary btn-sm">Delete</button>
                 </div>
             </td>
