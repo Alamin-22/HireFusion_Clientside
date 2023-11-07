@@ -18,7 +18,7 @@ const RemoteJobs = () => {
             })
     }, [axios])
     return (
-        <div>
+        <div className="space-y-1">
             {
                 remoteJobs?.slice(0, 8).map(job => <AllJobCard key={job._id} job={job}></AllJobCard>)
             }

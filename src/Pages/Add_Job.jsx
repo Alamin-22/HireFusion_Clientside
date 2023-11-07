@@ -2,16 +2,20 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../Hooks/useAuth";
+import useAxios from "../Hooks/useAxios";
+import Swal from "sweetalert2";
 
 const Add_Job = () => {
 
 
     const [startDate, setStartDate] = useState(new Date());
+    const [deadlineDate, setDeadlineDate] = useState(new Date());
     const [jobApplicants, setJobApplicants] = useState(0);
     const { user } = useAuth();
+    const axios = useAxios();
 
 
-    const addJob = e => {
+    const HandleAddJob = e => {
         e.preventDefault();
         const form = e.target;
         const UserName = form.userName.value;
@@ -22,17 +26,40 @@ const Add_Job = () => {
         const Salary = form.salary.value;
         const JobDetails = form.details.value;
         const photo = form.photo.value;
+        const logo = form.logo.value;
+        const CompanySlogan = form.CompanySlogan.value;
         const JobApplicants = form.jobApplicants.value;
-        const NewJob = { UserName, Title, Category, StartDate, Salary, Deadline, JobDetails, photo, JobApplicants };
+        const NewJob = {
+            LoggedInUser: UserName,
+            JobTitle: Title,
+            Category: Category,
+            ApplicationStartDate: StartDate,
+            Salary: Salary,
+            ApplicationEndDate: Deadline,
+            DetailDescription: JobDetails,
+            JobBanner: photo,
+            JobApplicantsNumber: JobApplicants,
+            CompanyLogo: logo,
+            CompanySlogan: CompanySlogan,
+        };
         console.log(NewJob);
-
         // send data to the server;
+        axios.post("/jobsdata", NewJob)
+            .then(res => {
+                Swal.fire("Posted!", "Job Successfully Posted", "success")
+                console.log(res.data)
+                setJobApplicants(applicants => applicants + 1);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
 
     }
     return (
         <div>
             <div className="max-w-4xl mx-auto shadow-2xl">
-                <form onSubmit={addJob} className=" bg-[#a6faf02d] " >
+                <form onSubmit={HandleAddJob} className=" bg-[#a6faf02d] " >
                     <div className="p-3 ">
                         <h1 className="text-3xl text-center font-bold">Job Description Form</h1>
                         {/*Title and Category */}
@@ -61,7 +88,7 @@ const Add_Job = () => {
                             </div>
                         </div>
                         {/* form Date row */}
-                        <div className=" flex md:flex mb-8 gap-4">
+                        {/* <div className=" flex md:flex mb-8 gap-4">
                             <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text"> Application Start</span>
@@ -79,6 +106,30 @@ const Add_Job = () => {
                                 <label className="input-group ">
                                     <DatePicker name="deadline"
                                         className="input cursor-pointer input-bordered w-[95%]  md:w-[364px] lg:w-[428px]" placeholderText="DD/MM/YYYY" selected={startDate} onChange={(date) => setStartDate(date)} />
+                                </label>
+                            </div>
+                        </div> */}
+                        <div className="flex md:flex mb-8 gap-4">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Application Start</span>
+                                </label>
+                                <label className="input-group">
+                                    <DatePicker name="start" className="input cursor-pointer input-bordered w-[95%] md:w-[364px] lg:w-[428px]"
+                                        placeholderText="MM/DD/YYYY"
+                                        selected={startDate} onChange={(date) => setStartDate(date)}
+                                    />
+                                </label>
+                            </div>
+
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text">Application Deadline</span>
+                                </label>
+                                <label className="input-group">
+                                    <DatePicker name="deadline" className="input cursor-pointer input-bordered w-[95%] md:w-[364px] lg:w-[428px]"
+                                        placeholderText="MM/DD/YYYY" selected={deadlineDate} onChange={(date) => setDeadlineDate(date)}
+                                    />
                                 </label>
                             </div>
                         </div>
@@ -114,6 +165,24 @@ const Add_Job = () => {
                                 </label>
                                 <label className="input-group">
                                     <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                            <div className="form-control md:w-1/2  ">
+                                <label className="label">
+                                    <span className="label-text">Company Logo</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="logo" placeholder="Company Logo Url" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                        </div>
+                        <div className="md:flex mb-8 gap-4">
+                            <div className="form-control  md:w-1/2 ">
+                                <label className="label">
+                                    <span className="label-text">Company Slogan</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="CompanySlogan" placeholder="Company Slogan...." className="input input-bordered w-full" required />
                                 </label>
                             </div>
                             <div className="form-control md:w-1/2  ">

@@ -21,7 +21,7 @@ const PartTimeJobs = () => {
 
 
     return (
-        <div>
+        <div className="space-y-1">
             {
                 partTimeJobs?.slice(0,8).map(job=> <AllJobCard key={job._id} job={job}></AllJobCard>)
             }
