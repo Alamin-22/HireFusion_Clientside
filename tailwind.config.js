@@ -24,6 +24,7 @@ export default {
 "success": "#17cf88",
         
 "warning": "#a9610a",
+"successSoft": "#2adfa6",
         
 "error": "#f14b4b",
         },
