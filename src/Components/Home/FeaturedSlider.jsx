@@ -17,8 +17,8 @@ const FeaturedSlider = () => {
                         <figure><img src="https://i.ibb.co/0K2XHfK/Rectangle-2-3.png" alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title"> <span className='font-bold'>Software Engineer </span></h2>
-                            <p className='text-left'>Posting Date: <span className=''>2023-11-12 </span></p>
-                            <p className='text-left'>Application Deadline:<span className=''>2023-11-27 </span></p>
+                            <p className='text-left'>Application Start: <span className=''>2023-11-12 </span></p>
+                            <p className='text-left'>Application End: <span className=''>2023-11-27 </span></p>
                             <p className='text-left'>Salary: <span className=''>$80,000 - $100,000</span></p>
                             <p className='text-left'>Category: <span className='font-semibold'>Hybrid</span></p>
                             <p className='text-left'>Applied : <span className=''>40</span></p>
@@ -34,8 +34,8 @@ const FeaturedSlider = () => {
                         <figure><img src="https://i.ibb.co/YcSRvRv/uxui.jpg" alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title"> <span className='font-bold'>UI/UX Designer</span></h2>
-                            <p className='text-left'>Posting Date: <span className=''>2023-10-12 </span></p>
-                            <p className='text-left'>Application Deadline:<span className=''>2023-11-27 </span></p>
+                            <p className='text-left'>Application Start: <span className=''>2023-10-12 </span></p>
+                            <p className='text-left'>Application End: <span className=''>2023-11-27 </span></p>
                             <p className='text-left'>Salary: <span className=''> $70,000 - $90,000</span></p>
                             <p className='text-left'>Category: <span className='font-semibold'>Hybrid</span></p>
                             <p className='text-left'>Applied : <span className=''>26</span></p>
@@ -51,8 +51,8 @@ const FeaturedSlider = () => {
                         <figure><img src="https://i.ibb.co/Y0bTLsY/developer.jpg" alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title"> <span className='font-bold'>Frontend Developer </span></h2>
-                            <p className='text-left'>Posting Date: <span className=''>2023-11-16 </span></p>
-                            <p className='text-left'>Application Deadline:<span className=''>2023-12-1 </span></p>
+                            <p className='text-left'>Application Start: <span className=''>2023-11-16 </span></p>
+                            <p className='text-left'>Application End: <span className=''>2023-12-1 </span></p>
                             <p className='text-left'>Salary: <span className=''>$60,000 - $70,000</span></p>
                             <p className='text-left'>Category: <span className='font-semibold'>Remote</span></p>
                             <p className='text-left'>Applied : <span className=''>32</span></p>

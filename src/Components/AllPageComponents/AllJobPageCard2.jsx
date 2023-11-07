@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
+
 import Swal from 'sweetalert2';
-const AllJobCard = ({ job }) => {
+import useAuth from '../../Hooks/useAuth';
+const AllJobPageCard2 = ({ job }) => {
 
     const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser } = job;
 
@@ -18,7 +19,7 @@ const AllJobCard = ({ job }) => {
 
     return (
         <div className='flex justify-center'>
-            <div className="relative md:flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+            <div className="relative md:flex w-full max-w-4xl flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="flex items-center  m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
                     <img src={JobBanner} alt="Job Related Img" className=" object-cover rounded-md md:w-20 md:h-28" />
                 </div>
@@ -38,10 +39,12 @@ const AllJobCard = ({ job }) => {
                             <p>Salary: <span className='font-medium'>{Salary}</span></p>
                             <p>Applied: <span className='font-medium'>{JobApplicantsNumber}</span></p>
                         </div>
+
                         <div className='flex flex-row-reverse justify-between md:grid'>
                             <Link onClick={handleViewDetails} to={`/jobDetails/${_id}`} className='btn btn-sm btn-primary'>Details</Link>
                             <p>Posted By: <span className='font-semibold'>{LoggedInUser}</span></p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -49,8 +52,8 @@ const AllJobCard = ({ job }) => {
     );
 };
 
-AllJobCard.propTypes = {
+AllJobPageCard2.propTypes = {
     job: PropTypes.object.isRequired,
 };
-export default AllJobCard;
+export default AllJobPageCard2;
 
