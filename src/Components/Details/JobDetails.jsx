@@ -8,21 +8,21 @@ import moment from "moment";
 const JobDetails = () => {
     const job = useLoaderData();
     const { user } = useAuth();
-    const { displayName } = user;
-    const {  JobTitle, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner , LoggedInUser, DetailDescription } = job;
+    const { email } = user;
+    const { JobTitle, postedEmail, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, DetailDescription } = job;
 
 
     const [isApplicationOpen, setApplicationOpen] = useState(false);
     const currentDate = Date.now();
-    const countdown = moment(ApplicationStartDate).fromNow(); 
-    
+    const countdown = moment(ApplicationStartDate).fromNow();
+
     const handleApplyClick = () => {
         if (currentDate > new Date(ApplicationEndDate)) {
             Swal.fire("Time End", "The application deadline for this job has passed. You cannot apply Now", "error")
-        }else if(currentDate < new Date(ApplicationStartDate)){
+        } else if (currentDate < new Date(ApplicationStartDate)) {
             Swal.fire("Application  not started", `The application will be start with${countdown}`, "info")
         }
-         else if (LoggedInUser === displayName) {
+        else if (postedEmail === email) {
             Swal.fire("Sorry!", "Employers cannot apply for their own job listings.", "error")
 
         } else {
@@ -84,7 +84,7 @@ const JobDetails = () => {
                                         ✕
                                     </button>
                                 </form>
-                                <ApplyForm job={job}   />
+                                <ApplyForm job={job} />
 
                             </div>
                         </dialog>

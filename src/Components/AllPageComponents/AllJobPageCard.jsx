@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import useAuth from '../../Hooks/useAuth';
 const AllJobPageCard = ({ job }) => {
     const { user } = useAuth();
-    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser } = job;
+    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, } = job;
 
     const handleViewDetails = () => {
         if (!user) {
@@ -15,7 +15,7 @@ const AllJobPageCard = ({ job }) => {
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl">
-                <figure>
+                <figure className='h-72'>
                     <img src={JobBanner} alt="Job Related pic" />
                 </figure>
                 <div className="card-body">

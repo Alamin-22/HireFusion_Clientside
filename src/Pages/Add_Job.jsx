@@ -12,6 +12,7 @@ const Add_Job = () => {
     const [deadlineDate, setDeadlineDate] = useState(new Date());
     const [jobApplicants, setJobApplicants] = useState(0);
     const { user } = useAuth();
+    const { email } = user;
     const axios = useAxios();
 
 
@@ -41,6 +42,7 @@ const Add_Job = () => {
             JobApplicantsNumber: JobApplicants,
             CompanyLogo: logo,
             CompanySlogan: CompanySlogan,
+            postedEmail: email,
         };
         console.log(NewJob);
         // send data to the server;
@@ -140,7 +142,7 @@ const Add_Job = () => {
                                     <span className="label-text">Salary range</span>
                                 </label>
                                 <label className="input-group">
-                                    <input type="text" name="salary" placeholder="Salary range" className="input input-bordered w-full" required />
+                                    <input type="text" name="salary" placeholder="$70,000 - $90,000" className="input input-bordered w-full" required />
                                 </label>
                             </div>
                             <div className="form-control md:w-1/2 md:ml-4">
