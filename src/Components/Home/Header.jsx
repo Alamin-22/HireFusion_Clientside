@@ -11,7 +11,7 @@ const Header = () => {
                         duration={2.75} />+ great job offers you deserve!</h1>
                     <p className="mb-5 text-5xl text-white"><span className='font-bold'>Your Dream</span> <br />
                         Job is Waiting</p>
-                    <p className='text-[#e4e2e2]'>Welcome to HireFusion, your ultimate destination for career excellence. Explore a world of endless possibilities as we connect you with the most exciting job opportunities. Whether you're a seasoned professional or just starting your journey, we're here to empower your dreams and ambitions. Browse, apply, and transform your career path today!</p>
+                    <p className='text-[#e4e2e2]'>Welcome to HireFusion, your ultimate destination for career excellence. Explore a world of endless possibilities as we connect you with the most exciting job opportunities. Whether you are a seasoned professional or just starting your journey, we are here to empower your dreams and ambitions. Browse, apply, and transform your career path today!</p>
                     <div>
                         <div className="">
                             <span className="max-w-lg text-[#8befe3cc] text-xl  font-semibold tracking-tight  xl:text-2xl  p-2 mt-2">Search Jobs By Categories.</span>
