@@ -5,6 +5,7 @@ import AllJobPageCard2 from "../Components/AllPageComponents/AllJobPageCard2";
 import LoadingSk from "../Components/loading/LoadingSk";
 import { GoSearch } from 'react-icons/go';
 import { Helmet } from "react-helmet-async";
+// import AllJobPageCard3 from "../Components/AllPageComponents/AllJobPageCard3";
 
 const All_jobs = () => {
     const axios = useAxios();
@@ -67,7 +68,7 @@ const All_jobs = () => {
                     </div>
                     <div className="mx-5 space-y-1">
                         {filteredJobs.map(job => (
-                            <AllJobPageCard2 key={job._id} job={job} />
+                            <AllJobPageCard2 key={job._id} job={job} ></AllJobPageCard2>
                         ))}
                     </div>
                 </div>

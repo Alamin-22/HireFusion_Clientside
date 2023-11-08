@@ -24,9 +24,9 @@ const Blogs = () => {
                     </div>
                     <div className="mt-2">
                         <p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer hover:underline" tabIndex="0" role="link">How do they work and where should we store them on the client-side?</p>
-                        <span className="font-bold">Access Token:</span> When a user logs in to a service or grants an application permission, they receive an access token. This access token is a proof of their authentication and authorization to access specific resources or perform certain actions. It typically has a short lifespan (e.g., 15 minutes) to minimize the risk if it's compromised. <br />
+                        <span className="font-bold">Access Token:</span> When a user logs in to a service or grants an application permission, they receive an access token. This access token is a proof of their authentication and authorization to access specific resources or perform certain actions. It typically has a short lifespan (e.g., 15 minutes) to minimize the risk if it is compromised. <br />
 
-                        <span className="font-bold">Refresh Token:</span> A refresh token is a long-lived secret that is securely stored on the client-side. It's not meant to access resources directly but serves as a key to get new access tokens when they expire. When the access token expires, the client can use the refresh token to request a new access token without requiring the user to log in again.  <br /> <br />
+                        <span className="font-bold">Refresh Token:</span> A refresh token is a long-lived secret that is securely stored on the client-side. It is not meant to access resources directly but serves as a key to get new access tokens when they expire. When the access token expires, the client can use the refresh token to request a new access token without requiring the user to log in again.  <br /> <br />
 
                         <span className="font-bold">Where to Store Them on the Client-Side?</span>
                         <span className="font-medium">Token should be stored securely, typically in one of these ways:</span>
@@ -76,6 +76,81 @@ const Blogs = () => {
 
 
                     </div>
+                    <div className="flex items-center justify-end mt-4">
+                        <div className="flex items-center">
+                            <img className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80" alt="avatar" />
+                            <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-200" tabIndex="0" role="link">Khatab wedaa</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {/* manage problem */}
+            <div className='mx-5'>
+                <div className="max-w-4xl mx-auto px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                    <div className="flex items-center justify-between">
+                        <span className="text-sm font-light text-gray-600 dark:text-gray-400">
+                            {moment().startOf('hour').fromNow()}</span>
+                        <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-primary rounded cursor-pointer hover:bg-[#7ad8cd]" tabIndex="0" role="button">New</a>
+                    </div>
+
+                    <div className="mt-2">
+                        <p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline cursor-pointer" tabIndex="0" role="link">How do I Manage My code in this Project.</p>
+
+                    </div>
+
+                    <div className="mt-2">
+                        <p className="text-gray-600 dark:text-gray-300 font-bold">1. Project Structure:</p>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">A well-organized project structure is essential for code management. I create a basic folder structure to manage my code. I do all my work in src folder. First I created 9 folder one by one in this folder. The folder name is Assets, Components, Config, Hooks, Layout, Pages, PrivaterRoute, Provider, Router. By reading the file name we can guess what is the use of those folder. Yes you guessed it right!!
+                        </p>
+
+                        <span className="font-bold">Components:</span> Basically I used this folder to create all the components I needed. So that I can find it easily. It makes me more comfortable to work.<br />
+
+                        <span className="font-bold">Config:</span>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            I used Config folder to create all of the config file such as Firebase i used in my project for authentication.
+                        </p>
+
+                        <span className="font-bold"> Hooks:</span>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            Basically As a developer we need our customizable hook for our comfort. So that we can organize our code much more  easer. For this reason I Created two hook, one is for useAuth and another is useAxios. It gives me more confidence to write code.
+                        </p> <br />
+                        <span className="font-bold">Pages: $ Private Route</span>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            Pages folder is basically used for store all of my page component in this folder.
+                        </p>
+                        <span className="font-bold">Provider :</span>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            I used provider for use Context Api. With th e help of Context API We can get any data form any where in the project without props dealing. For using globally I used this context API in the root of my project. And Write most of the Functionality in AuthContext.
+                        </p>
+                        <span className="font-bold">Provider :</span>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            I used provider for use Context Api. With th e help of Context API We can get any data form any where in the project without props dealing. For using globally I used this context API in the root of my project. And Write most of the Functionality in AuthContext.
+                        </p>
+
+                        <br /> <br /><br />
+                        <p>This is how i managed my Code structure for FontEnd Code. And Odiously I used a lots of components and function as my requirement which I did not write. I just want to give a  simple overview of my FontEnd Project How do I manage my code. </p>
+
+
+
+                        <div className="mt-6">
+                            <p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline cursor-pointer" tabIndex="0" role="link">
+                                How do I manage my backend code?
+                            </p>
+
+                        </div>
+                        <span className="font-bold">Express Js & mongoDB </span>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            I am using Express Js and Mongodb for my BackEnd. In my code backend server is built using Express.js and connected to a MongoDB database. The server offers various API routes for user authentication, job postings, and job applications. It incorporates essential middleware for handling cookies, cross-origin requests, and JSON data. User authentication is managed using JSON Web Tokens (JWT). The MongoDB driver is utilized for database interactions. The code ensures secure user sessions and supports CRUD operations for job listings and applications, making it a solid foundation for a job board platform.
+                        </p>
+
+
+                    </div>
+
+
+
+
+
                     <div className="flex items-center justify-end mt-4">
                         <div className="flex items-center">
                             <img className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80" alt="avatar" />
