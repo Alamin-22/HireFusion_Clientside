@@ -32,7 +32,7 @@ const Update = () => {
         const photo = form.photo.value;
         const logo = form.logo.value;
         const CompanySlogan = form.CompanySlogan.value;
-        const AppliedCount = form.AppliedCount.value;
+        // const AppliedCount = form.AppliedCount.value;
         const UpdatedJob = {
             LoggedInUser: UserName,
             JobTitle: Title,
@@ -188,7 +188,7 @@ const Update = () => {
                                 <textarea className="textarea textarea-bordered w-full h-64" name="details" required defaultValue={DetailDescription} placeholder="Write Job Description........"></textarea>
                             </label>
                         </div>
-                        <input type="submit" value="Post Job" className="btn btn-primary my-3 btn-block " />
+                        <input type="submit" value="Update Job" className="btn btn-primary my-3 btn-block " />
 
                     </div>
                 </form>

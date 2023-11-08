@@ -48,7 +48,6 @@ const ApplyForm = ({ job }) => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                     setApplicants(applicants => applicants + 1);
-                    Swal.fire("Count Updated!", "Job Successfully Updated", "success")
                 }
             })
             .catch(error => {
