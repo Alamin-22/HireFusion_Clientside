@@ -10,24 +10,25 @@ const All_jobs = () => {
     const axios = useAxios();
     const [allJobs, setAllJobs] = useState([]);
     // to store search data
-    const [searchTerm, setSearchTerm] = useState(''); 
+    const [searchItems, setSearchItems] = useState('');
     // to store the filtered jobs
-    const [filteredJobs, setFilteredJobs] = useState([]); 
+    const [filteredJobs, setFilteredJobs] = useState([]);
 
     useEffect(() => {
         axios.get('/jobsdata')
             .then(res => {
                 setAllJobs(res.data);
-                setFilteredJobs(res.data); 
+                setFilteredJobs(res.data);
             })
             .catch(error => {
                 console.log(error);
             });
     }, [axios]);
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault();
         const filtered = allJobs.filter(job =>
-            job.JobTitle && job.JobTitle.toLowerCase().includes(searchTerm.toLowerCase())
+            job.JobTitle && job.JobTitle.toLowerCase().includes(searchItems.toLowerCase())
         );
         setFilteredJobs(filtered);
     };
@@ -46,21 +47,21 @@ const All_jobs = () => {
                                 Search By Job Title
                             </h1>
                             <div>
-                                <div className="flex md:w-full flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:space-x-0 md:flex-row md:justify-center">
-                                    <input
-                                        type="text"
-                                        className="md:w-3/4 md:rounded-r-none px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
-                                        placeholder="Search By Job Title"
-                                        value={searchTerm}
-                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                    />
-                                    <button
-                                        className="w-full btn btn-primary md:rounded-l-none md:w-auto md:mx-4"
-                                        onClick={handleSearch}
-                                    >
-                                        <GoSearch />
-                                    </button>
-                                </div>
+                                <form onSubmit={handleSearch}>
+                                    <div className="flex md:w-full flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:space-x-0 md:flex-row md:justify-center">
+                                        <input
+                                            type="text"
+                                            className="md:w-3/4 md:rounded-r-none px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus-border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                                            placeholder="Search By Job Title"
+                                            value={searchItems}
+                                            onChange={(e) => setSearchItems(e.target.value)}
+                                        />
+                                        <button type="submit" className="w-full btn btn-primary md:rounded-l-none md:w-auto md:mx-4">
+                                            <GoSearch />
+                                        </button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
