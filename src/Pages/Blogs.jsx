@@ -1,13 +1,71 @@
 import moment from 'moment';
 import { Helmet } from 'react-helmet-async';
-
+import { motion } from "framer-motion"
 const Blogs = () => {
+
+
+    const testVariants = {
+        initial: {
+            x: -500,
+            opacity: 0,
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                staggerChildren: 0.1,
+            }
+        },
+        exit: {
+            x: 500,
+            opacity: 0,
+        }
+    }
+    const testVariantsRight = {
+        initial: {
+            x: 500,
+            opacity: 0,
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                staggerChildren: 0.1,
+            }
+        },
+        exit: {
+            x: 500,
+            opacity: 0,
+        }
+    }
+    const testVariantsUp = {
+        initial: {
+            y: 500,
+            opacity: 0,
+        },
+        animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                staggerChildren: 0.1,
+            }
+        },
+        exit: {
+            y: 500,
+            opacity: 0,
+        }
+    }
+
+
     return (
         <div>
             <Helmet><title>Hire Fusion | Blogs</title></Helmet>
-            <div className="flex flex-col lg:flex-row gap-10 justify-center m-4 my-10">
+            <div  className="flex flex-col lg:flex-row gap-10 justify-center m-4 my-10">
                 {/* blog 1 */}
-                <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md ">
+                <motion.div variants={testVariants} initial="initial" animate="animate" className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md ">
                     <div className="flex items-center justify-between">
                         <span className="text-sm font-light text-gray-600 ">{moment().startOf('hour').fromNow()} </span>
                         <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-primary rounded cursor-pointer hover:bg-[#7ad8cd]" tabIndex="0" role="button">New</a>
@@ -46,9 +104,9 @@ const Blogs = () => {
                             <a className="font-bold text-gray-700 cursor-pointer " tabIndex="0" role="link">Khatab wedaa</a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
                 {/* blog 2 */}
-                <div className="max-w-2xl mx-auto px-8 py-4 bg-white rounded-lg shadow-md ">
+                <motion.div variants={testVariantsRight} initial="initial" animate="animate" className="max-w-2xl mx-auto px-8 py-4 bg-white rounded-lg shadow-md ">
                     <div className="flex items-center justify-between">
                         <span className="text-sm font-light text-gray-600 ">
                             {moment().startOf('hour').fromNow()}</span>
@@ -82,12 +140,12 @@ const Blogs = () => {
                             <a className="font-bold text-gray-700 cursor-pointer " tabIndex="0" role="link">Khatab wedaa</a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
             {/* manage problem */}
             <div className='mx-5 mb-10'>
-                <div className="max-w-4xl mx-auto px-8 py-4 bg-white rounded-lg shadow-2xl ">
+                <motion.div variants={testVariantsUp} initial="initial" animate="animate" className="max-w-4xl mx-auto px-8 py-4 bg-white rounded-lg shadow-2xl ">
                     <div className="flex items-center justify-between">
                         <span className="text-sm font-light text-gray-600 ">
                             {moment().startOf('hour').fromNow()}</span>
@@ -157,7 +215,7 @@ const Blogs = () => {
                             <a className="font-bold text-gray-700 cursor-pointer " tabIndex="0" role="link">Khatab wedaa</a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

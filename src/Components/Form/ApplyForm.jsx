@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
@@ -17,7 +17,27 @@ const ApplyForm = ({ job }) => {
 
     const currentDate = moment();
     const SubmitDate = currentDate.format('DD-MM-YYYY');
-
+    const sendAutoEmail = () => {
+        
+        emailjs.init('N48nn4Ng8dHmiDE2L');
+      
+        
+        const emailParams = {
+          to_email: email,
+          message: 'Thank you for submitting your job application. We have received it. We will Contact you soon!!',
+         
+        };
+      
+        
+        emailjs.send('service_0oagj3a', 'template_jtt62qb', emailParams)
+          .then((result) => {
+            console.log('Autoresponder email sent successfully:', result.text);
+          })
+          .catch((error) => {
+            console.error('Failed to send the autoresponder email:', error);
+          });
+      };
+      
 
 
 
@@ -36,6 +56,8 @@ const ApplyForm = ({ job }) => {
             .then(res => {
                 Swal.fire("Submitted!", "Application Successfully Submitted", "success")
                 console.log(res.data)
+                // to send auto email
+                sendAutoEmail();
 
             })
             .catch(error => {
@@ -102,9 +124,6 @@ ApplyForm.propTypes = {
 
 export default ApplyForm;
 
-
-
-// ***************************************************************************************************
 
 
 

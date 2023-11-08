@@ -1,7 +1,33 @@
 import CountUp from 'react-countup';
+import { motion } from "framer-motion"
+
 const Header = () => {
+    
+
+    const testVariants = {
+        initial: {
+            x: -500,
+            opacity: 0,
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                staggerChildren: 0.1,
+            }
+        },
+        exit: {
+            x: 500,
+            opacity: 0,
+        }
+    }
+
+
+
+
     return (
-        <div className="hero min-h-[80vh] " style={{ backgroundImage: 'url(https://i.ibb.co/3vV5P8Y/asdbanner.jpg)' }}>
+        <motion.div variants={testVariants} initial="initial" animate="animate" className="hero min-h-[80vh] " style={{ backgroundImage: 'url(https://i.ibb.co/3vV5P8Y/asdbanner.jpg)' }}>
             <div className="hero-overlay  bg-opacity-60"></div>
             <div className="hero-content   text-neutral-content">
                 <div className="max-w-4xl ">
@@ -26,7 +52,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
