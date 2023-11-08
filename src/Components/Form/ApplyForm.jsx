@@ -11,8 +11,9 @@ const ApplyForm = ({ job }) => {
     const { user } = useAuth();
     const axios = useAxios()
     const { displayName, email } = user;
-    const { _id, JobTitle, CompanyLogo, Category, Salary, JobApplicantsNumber, } = job;
-    const [applicants, setApplicants] = useState(JobApplicantsNumber)
+    const { _id, JobTitle, CompanyLogo, Category, Salary, AppliedCount, } = job;
+    const [applicants, setApplicants] = useState(AppliedCount)
+
 
     const currentDate = moment();
     const SubmitDate = currentDate.format('DD-MM-YYYY');
@@ -35,25 +36,29 @@ const ApplyForm = ({ job }) => {
             .then(res => {
                 Swal.fire("Submitted!", "Application Successfully Submitted", "success")
                 console.log(res.data)
-                setApplicants(applicants => applicants + 1);
+
             })
             .catch(error => {
                 console.log(error)
             })
 
-        // fetch("http://localhost:5000/api/v1/applied", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(AppliedInfo)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data)
-        //     })
+        // update count
+        axios.patch(`/jobsdata/${_id}`, { AppliedCount: applicants + 1 })
+            .then(res => {
+                console.log(res.data)
+                if (res.data.modifiedCount > 0) {
+                    setApplicants(applicants => applicants + 1);
+                    Swal.fire("Count Updated!", "Job Successfully Updated", "success")
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+
 
     }
+
 
 
     return (
@@ -100,7 +105,7 @@ export default ApplyForm;
 
 
 
- // ***************************************************************************************************
+// ***************************************************************************************************
 
 
 

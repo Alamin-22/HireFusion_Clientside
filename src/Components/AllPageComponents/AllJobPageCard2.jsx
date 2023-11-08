@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import useAuth from '../../Hooks/useAuth';
 const AllJobPageCard2 = ({ job }) => {
 
-    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser } = job;
+    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, AppliedCount, JobBanner, LoggedInUser } = job;
 
     const { user } = useAuth();
 
@@ -37,7 +37,7 @@ const AllJobPageCard2 = ({ job }) => {
                         </div>
                         <div className='text-left'>
                             <p>Salary: <span className='font-medium'>{Salary}</span></p>
-                            <p>Applied: <span className='font-medium'>{JobApplicantsNumber}</span></p>
+                            <p>Applied: <span className='font-medium'>{AppliedCount}</span></p>
                         </div>
 
                         <div className='flex flex-row-reverse justify-between md:grid'>

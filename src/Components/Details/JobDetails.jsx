@@ -10,7 +10,7 @@ const JobDetails = () => {
     const job = useLoaderData();
     const { user } = useAuth();
     const { email } = user;
-    const { JobTitle, postedEmail, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, DetailDescription } = job;
+    const { JobTitle, postedEmail, CompanySlogan, CompanyLogo, Category, ApplicationStartDate, ApplicationEndDate, Salary, AppliedCount, JobBanner, LoggedInUser, DetailDescription } = job;
 
 
     const [isApplicationOpen, setApplicationOpen] = useState(false);
@@ -61,7 +61,7 @@ const JobDetails = () => {
                 </div>
                 <div className="mt-5">
                     <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Salary: {Salary}</p>
-                    <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Applied: {JobApplicantsNumber}</p>
+                    <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Applied: {AppliedCount}</p>
                     <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Category: <span className="font-semibold">{Category}</span></p>
                 </div>
                 <div className="mt-1 flex justify-between items-end ">

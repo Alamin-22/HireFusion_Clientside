@@ -2,13 +2,14 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/LogoJob.png"
 import { AiOutlineMenu } from 'react-icons/ai';
 import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
 
 
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
 
-
+    const axios = useAxios();
 
     const NavbarLinks = <>
         <NavLink to={"/"} className={({ isActive, isPending }) =>
@@ -41,7 +42,15 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-            .then()
+            .then(() => {
+                axios.post("/logout", {}, {})
+                    .then(res => {
+                        console.log(res.data);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            })
             .catch()
     }
 
