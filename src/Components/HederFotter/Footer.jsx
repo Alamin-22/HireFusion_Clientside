@@ -3,14 +3,14 @@ import logo from "../../assets/images/LogoJob.png"
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-gray-100 dark:bg-gray-900">
+            <footer className="bg-gray-300 ">
                 <div className="container px-6 py-12 mx-auto">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
                         <div className="sm:col-span-2">
-                            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Register to get update.</h1>
+                            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl ">Register to get update.</h1>
 
                             <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
-                                <input id="email" type="text" className="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Email Address" />
+                                <input id="email" type="text" className="px-4 py-2 text-gray-700 bg-white border rounded-md  focus:border-blue-400  focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Email Address" />
 
                                 <button className="w-full btn btn-primary  md:w-auto md:mx-4 ">
                                     Subscribe
@@ -19,20 +19,20 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p className="font-semibold text-gray-800 dark:text-white">Contact</p>
+                            <p className="font-semibold text-gray-800 ">Contact</p>
 
                             <div className="flex flex-col items-start mt-5 space-y-2">
-                                <p className="cursor-pointer text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"> +8801234567890</p>
-                                <p className="cursor-pointer text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"> +9961234567230</p>
-                                <p className="text-gray-600 cursor-pointer transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"> +99601234567890</p>
+                                <p className="cursor-pointer text-gray-600 transition-colors duration-300  hover:underline hover:text-blue-500"> +8801234567890</p>
+                                <p className="cursor-pointer text-gray-600 transition-colors duration-300  hover:underline hover:text-blue-500"> +9961234567230</p>
+                                <p className="text-gray-600 cursor-pointer transition-colors duration-300  hover:underline hover:text-blue-500"> +99601234567890</p>
                             </div>
                         </div>
 
                         <div>
-                            <p className="font-semibold text-gray-800 dark:text-white">Address</p>
+                            <p className="font-semibold text-gray-800 ">Address</p>
 
                             <div className="flex flex-col items-start mt-5 space-y-2">
-                                <p className="cursor-pointer text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">
+                                <p className="cursor-pointer text-gray-600 transition-colors duration-300  hover:underline hover:text-blue-500">
                                     24/7, Tower Building <br />
                                     Level-3, A-4 <br />
                                     Dhaka Bangladesh
@@ -41,15 +41,15 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <hr className="my-6 border-gray-500 md:my-8 dark:border-gray-700" />
+                    <hr className="my-6 border-gray-500 md:my-8 " />
 
                     <div className="flex items-center justify-between">
                         <a href="#">
                             <img className=" h-28" src={logo} alt="" />
                         </a>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">© Copyright 2023. All Rights Reserved By HireFusion.</p>
+                        <p className="text-sm text-gray-600 ">© Copyright 2023. All Rights Reserved By HireFusion.</p>
                         <div className="flex -mx-2">
-                            <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Reddit">
+                            <a href="#" className="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 " aria-label="Reddit">
                                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -58,7 +58,7 @@ const Footer = () => {
                                 </svg>
                             </a>
 
-                            <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Facebook">
+                            <a href="#" className="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 " aria-label="Facebook">
                                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -67,7 +67,7 @@ const Footer = () => {
                                 </svg>
                             </a>
 
-                            <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Github">
+                            <a href="#" className="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 " aria-label="Github">
                                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path

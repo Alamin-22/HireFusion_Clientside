@@ -52,7 +52,7 @@ const All_jobs = () => {
                                     <div className="flex md:w-full flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:space-x-0 md:flex-row md:justify-center">
                                         <input
                                             type="text"
-                                            className="md:w-3/4 md:rounded-r-none px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus-border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                                            className="md:w-3/4 md:rounded-r-none px-4 py-2 text-gray-700 bg-white border rounded-md    focus:border-blue-400  focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
                                             placeholder="Search By Job Title"
                                             value={searchItems}
                                             onChange={(e) => setSearchItems(e.target.value)}

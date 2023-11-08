@@ -56,7 +56,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <header className="p-4 bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
+            <header className="p-4 bg-gray-300 ">
                 <div className="container flex justify-between h-16 mx-auto">
                     {/* logo */}
                     <img src={logo} alt="HireFusion" />
