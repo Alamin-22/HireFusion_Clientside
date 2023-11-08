@@ -35,12 +35,12 @@ const router = createBrowserRouter([
             {
                 path: `/jobDetails/:id`,
                 element: <PrivateRoute><JobDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/jobsdata/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-11-server-mauve-one.vercel.app/api/v1/jobsdata/${params.id}`),
             },
             {
                 path: `/updatejob/:id`,
                 element: <PrivateRoute><Update /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/jobsdata/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-11-server-mauve-one.vercel.app/api/v1/jobsdata/${params.id}`),
             }
             ,
             {
