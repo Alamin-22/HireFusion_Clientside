@@ -1,6 +1,7 @@
 import axios from "axios";
-
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "./useAuth";
 
 
 const axiosSecure = axios.create({
@@ -8,6 +9,24 @@ const axiosSecure = axios.create({
     withCredentials: true
 })
 const useAxios = () => {
+
+    const { logOut } = useAuth();
+    const navigate = useNavigate();
+    useEffect(() => {
+        axiosSecure.interceptors.response.use(res => {
+            return res;
+        }, error => {
+            console.log("error dhora khaise in the interceptor", error.response)
+            if (error.response.status === 401 || error.response.status === 403) {
+                console.log("Logout the user")
+                logOut()
+                    .then(() => {
+                        navigate("/login")
+                    })
+                    .catch()
+            }
+        })
+    }, [logOut, navigate])
     return axiosSecure;
 };
 
