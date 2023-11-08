@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import useAxios from "../../Hooks/useAxios";
 // import { MdEmail } from 'react-icons/md';
 // import { AiFillUnlock } from "react-icons/ai";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-
     const { Login } = useAuth();
-
-
+    const axios = useAxios();
     const navigate = useNavigate();
+
+    const location = useLocation();
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -24,9 +26,25 @@ const Login = () => {
         console.log(email, password)
         Login(email, password)
             .then(result => {
-                console.log(result.user)
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = { email }
                 Swal.fire('Success!', 'Login Successful', 'success')
-                navigate(location?.state ? location.state : '/');
+
+                // send data via server
+
+                axios.post("/jwt", user)
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.success) {
+                            navigate(location?.state ? location.state : '/');
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+
+
             })
             .catch(error => {
                 console.log(error);
