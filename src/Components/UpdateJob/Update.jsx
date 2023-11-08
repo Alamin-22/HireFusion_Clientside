@@ -14,7 +14,7 @@ const Update = () => {
     const { email } = user;
     const axios = useAxios();
     const Job = useLoaderData();
-    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, JobApplicantsNumber, JobBanner, LoggedInUser, CompanyLogo, CompanySlogan, DetailDescription, } = Job;
+    const { _id, JobTitle, Category, ApplicationStartDate, ApplicationEndDate, Salary, AppliedCount, JobBanner, LoggedInUser, CompanyLogo, CompanySlogan, DetailDescription, } = Job;
     const [startDate, setStartDate] = useState(new Date(ApplicationStartDate));
     const [deadlineDate, setDeadlineDate] = useState(new Date(ApplicationEndDate));
 
@@ -32,7 +32,7 @@ const Update = () => {
         const photo = form.photo.value;
         const logo = form.logo.value;
         const CompanySlogan = form.CompanySlogan.value;
-        const JobApplicants = form.jobApplicants.value;
+        const AppliedCount = form.AppliedCount.value;
         const UpdatedJob = {
             LoggedInUser: UserName,
             JobTitle: Title,
@@ -42,7 +42,7 @@ const Update = () => {
             ApplicationEndDate: Deadline,
             DetailDescription: JobDetails,
             JobBanner: photo,
-            JobApplicantsNumber: JobApplicants,
+            AppliedCount: AppliedCount,
             CompanyLogo: logo,
             CompanySlogan: CompanySlogan,
             postedEmail: email,
@@ -137,7 +137,7 @@ const Update = () => {
                                     <input className="input input-bordered w-full" required
                                         type="number"
                                         name="jobApplicants"
-                                        value={JobApplicantsNumber}
+                                        value={AppliedCount}
                                         readOnly
                                     />
                                 </label>

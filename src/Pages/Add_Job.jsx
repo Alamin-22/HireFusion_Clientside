@@ -11,7 +11,7 @@ const Add_Job = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const [deadlineDate, setDeadlineDate] = useState(new Date());
-    const [jobApplicants, setJobApplicants] = useState(0);
+    const [AppliedCount, setAppliedCount] = useState(0);
     const { user } = useAuth();
     const { email } = user;
     const axios = useAxios();
@@ -30,7 +30,7 @@ const Add_Job = () => {
         const photo = form.photo.value;
         const logo = form.logo.value;
         const CompanySlogan = form.CompanySlogan.value;
-        const JobApplicants = form.jobApplicants.value;
+        const AppliedCount = form.AppliedCount.value;
         const NewJob = {
             LoggedInUser: UserName,
             JobTitle: Title,
@@ -40,7 +40,7 @@ const Add_Job = () => {
             ApplicationEndDate: Deadline,
             DetailDescription: JobDetails,
             JobBanner: photo,
-            JobApplicantsNumber: JobApplicants,
+            AppliedCount: AppliedCount,
             CompanyLogo: logo,
             CompanySlogan: CompanySlogan,
             postedEmail: email,
@@ -51,7 +51,7 @@ const Add_Job = () => {
             .then(res => {
                 Swal.fire("Posted!", "Job Successfully Posted", "success")
                 console.log(res.data)
-                setJobApplicants(applicants => applicants + 1);
+                setAppliedCount(applicants => applicants + 1);
             })
             .catch(error => {
                 console.log(error)
@@ -92,27 +92,7 @@ const Add_Job = () => {
                             </div>
                         </div>
                         {/* form Date row */}
-                        {/* <div className=" flex md:flex mb-8 gap-4">
-                            <div className="form-control md:w-1/2">
-                                <label className="label">
-                                    <span className="label-text"> Application Start</span>
-                                </label>
-                                <label className="input-group ">
-                                    <DatePicker name="start"
-                                        className="input cursor-pointer input-bordered w-[95%]  md:w-[364px] lg:w-[428px]" placeholderText="DD/MM/YYYY" selected={startDate} onChange={(date) => setStartDate(date)} />
-                                </label>
-                            </div>
-
-                            <div className="form-control md:w-1/2">
-                                <label className="label">
-                                    <span className="label-text"> Application Deadline</span>
-                                </label>
-                                <label className="input-group ">
-                                    <DatePicker name="deadline"
-                                        className="input cursor-pointer input-bordered w-[95%]  md:w-[364px] lg:w-[428px]" placeholderText="DD/MM/YYYY" selected={startDate} onChange={(date) => setStartDate(date)} />
-                                </label>
-                            </div>
-                        </div> */}
+                        
                         <div className="flex md:flex mb-8 gap-4">
                             <div className="form-control md:w-1/2">
                                 <label className="label">
@@ -154,8 +134,8 @@ const Add_Job = () => {
                                 <label className="input-group">
                                     <input className="input input-bordered w-full" required
                                         type="number"
-                                        name="jobApplicants"
-                                        value={jobApplicants}
+                                        name="AppliedCount"
+                                        value={AppliedCount}
                                         readOnly // Make the input field read-only
                                     />
                                 </label>
