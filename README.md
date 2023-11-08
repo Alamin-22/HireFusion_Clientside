@@ -4,7 +4,7 @@
 This README provides an overview of the client-side of our job board website project. The job board is designed to connect job seekers and employers, providing an easy and efficient platform for job listings and applications.
 
 ## Client-Side Live Link
-You can access the live version of the client-side of our job board website by clicking on the following link: [Job Board Website](https://www.yourwebsite.com)
+You can access the live version of the client-side of our job board website by clicking on the following link: [HireFusion](https://assignment-11-5c145.firebaseapp.com/)
 
 ## Features
 - **User-friendly Interface**: Our website offers an intuitive and visually appealing user interface, making it easy for job seekers to find and apply for jobs, and for employers to post and manage job listings.

@@ -1,5 +1,6 @@
+import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
-
+import error from "../assets/gif/Animation - error.json"
 const Error = () => {
     return (
         <div>
@@ -17,7 +18,8 @@ const Error = () => {
                             <Link to={"/"} className="inline-block items-center rounded-md bg-black px-6 py-3 text-center font-semibold text-white">Back Home</Link>
                         </div>
                         <div>
-                            <img src="https://i.ibb.co/1skTgp9/page-error.png" alt="" className="mx-auto inline-block h-[80vh] w-full  max-w-[640px] object-cover" />
+                            {/* <img src="https://i.ibb.co/1skTgp9/page-error.png" alt="" className="mx-auto inline-block h-[80vh] w-full  max-w-[640px] object-cover" /> */}
+                            <Lottie animationData={error} className='w-96 mx-auto '></Lottie>
                         </div>
                     </div>
                 </div>
