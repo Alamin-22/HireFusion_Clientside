@@ -15,7 +15,7 @@ const My_Job = () => {
 
 
     useEffect(() => {
-        axios.get(`/jobsdata?email=${user.email}`)
+        axios.get(`/jobsdata/myJobs?email=${user?.email}`)
             .then(res => {
                 setAllPosted(res.data)
             })
