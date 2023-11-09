@@ -6,8 +6,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import useAxios from "../../Hooks/useAxios";
-// import { MdEmail } from 'react-icons/md';
-// import { AiFillUnlock } from "react-icons/ai";
+
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { Login } = useAuth();
@@ -57,9 +56,9 @@ const Login = () => {
         <div>
             <Helmet><title>Hire Fusion | Login</title></Helmet>
             <div className="flex flex-wrap w-full">
-                <div className="flex flex-col w-full md:w-1/2">
+                <div className="flex flex-col w-full lg:w-1/2 mt-6 mb-9">
                     <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
-                        <form onSubmit={handleLogin} className="card-body shadow-2xl rounded-xl">
+                        <form onSubmit={handleLogin} className="card-body shadow-2xl rounded-xl ">
                             <h1 className="text-3xl font-semibold">Login Now!!</h1>
                             <div className="form-control">
                                 <label className="label">
@@ -71,11 +70,11 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <div>
+                                <div >
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         name="password" placeholder="password" className="input input-bordered w-full" required />
-                                    <span className="absolute  left-[480px] top-[370px] cursor-pointer" onClick={() => { setShowPassword(!showPassword) }} >
+                                    <span className="absolute right-[70px] md:right-[135px] lg:left-[480px] top-[366px] md:top-[336px] lg:top-[395px] cursor-pointer" onClick={() => { setShowPassword(!showPassword) }} >
                                         {
                                             showPassword ? <AiFillEye className="text-2xl " /> : <AiFillEyeInvisible className="text-2xl " />
                                         }
@@ -99,8 +98,8 @@ const Login = () => {
                     </div>
 
                 </div>
-                <div className="w-1/2 shadow-2xl">
-                    <img className="hidden object-cover w-full h-screen md:block" src="https://i.ibb.co/ynvfh8v/job-board-software.png" />
+                <div className="w-1/2 shadow-2xl mt-6 mb-9 ">
+                    <img className="hidden object-cover w-full h-screen lg:block" src="https://i.ibb.co/ynvfh8v/job-board-software.png" />
                 </div>
             </div>
         </div>
