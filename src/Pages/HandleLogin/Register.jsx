@@ -47,10 +47,12 @@ const Register = () => {
     return (
         <div >
             <Helmet><title>Hire Fusion | Register</title></Helmet>
-            <div className="flex flex-wrap w-full">
-                <div className="flex flex-col w-full md:w-1/2">
+
+            <div >
+                <div className="w-full lg:w-2/3 mx-auto  mt-6 mb-9">
                     <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
-                        <form onSubmit={handleRegister} className="card-body shadow-2xl rounded-xl ">
+                        <form onSubmit={handleRegister} className="card-body bg-emerald-50 shadow-2xl rounded-xl ">
+                            <h1 className="text-3xl font-semibold">Register for Job updates!</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -63,7 +65,7 @@ const Register = () => {
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className=" form-control">
+                            <div className=" form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
@@ -71,7 +73,7 @@ const Register = () => {
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         name="password" placeholder="password" className="input input-bordered w-full" required />
-                                    <span className="absolute  left-[480px] top-[420px] cursor-pointer" onClick={() => { setShowPassword(!showPassword) }} >
+                                    <span className="absolute right-5 bottom-2 cursor-pointer" onClick={() => { setShowPassword(!showPassword) }} >
                                         {
                                             showPassword ? <AiFillEye className="text-2xl " /> : <AiFillEyeInvisible className="text-2xl " />
                                         }
@@ -90,9 +92,6 @@ const Register = () => {
                             <p className="text-center">Already have an account? <Link to={"/login"} className="font-semibold text-blue-600 underline" >LogIn</Link> </p>
                         </form>
                     </div>
-                </div>
-                <div className="w-1/2 shadow-2xl">
-                    <img className="hidden object-cover w-full h-screen md:block" src="https://i.ibb.co/ynvfh8v/job-board-software.png" />
                 </div>
             </div>
         </div>

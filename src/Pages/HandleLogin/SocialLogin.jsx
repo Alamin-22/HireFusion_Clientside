@@ -37,7 +37,7 @@ const SocialLogin = () => {
     return (
         <div>
 
-            <div className=" flex justify-evenly mb-5">
+            <div className=" flex flex-col space-y-3">
                 <button onClick={() => handleSocialLogin(GoogleSingIn)} className="btn btn-primary normal-case"> <FcGoogle />Google</button>
                 <button className="btn btn-primary normal-case"> <AiOutlineGithub />GitHub</button>
             </div>
