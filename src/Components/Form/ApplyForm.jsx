@@ -34,10 +34,10 @@ const ApplyForm = ({ job }) => {
 
         emailjs.send('service_0oagj3a', 'template_jtt62qb', UserEmail)
           .then((result) => {
-            console.log('Autoresponder email sent successfully:', result.text);
+            console.log('email sent successfully:', result.text);
           })
           .catch((error) => {
-            console.error('Failed to send the autoresponder email:', error);
+            console.error('Fail Sending Email', error);
           });
       };
 

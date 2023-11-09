@@ -6,17 +6,27 @@ import LoadingSk from "../Components/loading/LoadingSk";
 import { GoSearch } from 'react-icons/go';
 import { Helmet } from "react-helmet-async";
 // import AllJobPageCard3 from "../Components/AllPageComponents/AllJobPageCard3";
-
+import "./CSS/pagination.css"
 const All_jobs = () => {
     const axios = useAxios();
     const [allJobs, setAllJobs] = useState([]);
+    const [count, setCount] = useState([]);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [itemPerPage, setItemPerPage] = useState(10);
     // to store search data
     const [searchItems, setSearchItems] = useState('');
     // to store the filtered jobs
     const [filteredJobs, setFilteredJobs] = useState([]);
+    // pagination
+    // const itemsPerPage = 10;
+    const numberOfPages = Math.ceil(count / itemPerPage);
+    const pages = [...Array(numberOfPages).keys()];
+    console.log(pages);
+
+
 
     useEffect(() => {
-        axios.get('/jobsdata')
+        axios.get(`/jobsdata?page=${currentPage}&size=${itemPerPage}`)
             .then(res => {
                 setAllJobs(res.data);
                 setFilteredJobs(res.data);
@@ -24,7 +34,18 @@ const All_jobs = () => {
             .catch(error => {
                 console.log(error);
             });
-    }, [axios]);
+    }, [axios, currentPage, itemPerPage]);
+
+    useEffect(() => {
+        axios.get('/jobsdataCount')
+            .then(res => {
+                console.log(res.data)
+                setCount(res.data.count)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [axios])
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -33,6 +54,24 @@ const All_jobs = () => {
         );
         setFilteredJobs(filtered);
     };
+
+    const handleItemPerPage = e => {
+        const val = parseInt(e.target.value);
+        console.log(val);
+        setItemPerPage(val);
+        setCurrentPage(0);
+    }
+    const handlePrevPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const handleNextPage = () => {
+        if (currentPage <= pages.length - 2) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
+
 
     return (
         <div>
@@ -48,7 +87,7 @@ const All_jobs = () => {
                                 Search By Job Title
                             </h1>
                             <div>
-                                <form onSubmit={handleSearch}>
+                                <form onChange={handleSearch}>
                                     <div className="flex md:w-full flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:space-x-0 md:flex-row md:justify-center">
                                         <input
                                             type="text"
@@ -73,6 +112,23 @@ const All_jobs = () => {
                     </div>
                 </div>
             )}
+            <div className="pagination space-x-2">
+               
+                <button className="btn" onClick={handlePrevPage}>Prev</button>
+                {
+                    pages.map((page, idx) => <button 
+                        className={currentPage === page ? " btn btn-primary  " : "btn "}
+                        // className={currentPage ? page && "selected"  }
+                        onClick={() => setCurrentPage(page)}
+                        key={idx}>{page}
+                    </button>)
+                }
+                <button className="btn" onClick={handleNextPage}>Next</button>
+                <select name="" id="" onChange={handleItemPerPage} className='options '>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
         </div>
     );
 };

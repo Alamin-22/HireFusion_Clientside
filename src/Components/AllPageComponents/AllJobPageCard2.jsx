@@ -39,9 +39,9 @@ const AllJobPageCard2 = ({ job }) => {
                             <p>Salary: <span className='font-medium'>{Salary}</span></p>
                             <p>Applied: <span className='font-medium'>{AppliedCount}</span></p>
                         </div>
-
+                        <Link onClick={handleViewDetails} to={`/jobDetails/${_id}`} className='btn btn-sm btn-primary'>Details</Link>
                         <div className='flex flex-row-reverse justify-between md:grid'>
-                            <Link onClick={handleViewDetails} to={`/jobDetails/${_id}`} className='btn btn-sm btn-primary'>Details</Link>
+                            
                             <p>Posted By: <span className='font-semibold'>{LoggedInUser}</span></p>
                         </div>
 
