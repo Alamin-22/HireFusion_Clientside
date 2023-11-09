@@ -34,16 +34,16 @@ const JobDetails = () => {
     return (
         <div>
             <Helmet><title>Hire Fusion | Job Details</title></Helmet>
-            <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md ">
                 <figure >
                     <img src={JobBanner} alt="job Related banner" className=" mx-auto" />
                 </figure>
                 <div className="mt-7 flex justify-between">
 
                     <div>
-                        <p className="text-gray-600 dark:text-gray-300 font-bold">Job Title:</p>
-                        <p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline cursor-pointer" tabIndex="0" role="link"> {JobTitle}</p>
-                        <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
+                        <p className="text-gray-600  font-bold">Job Title:</p>
+                        <p className="text-xl font-bold text-gray-700  hover:text-gray-600  hover:underline cursor-pointer" tabIndex="0" role="link"> {JobTitle}</p>
+                        <p className="mt-2 text-base text-gray-600 ">
                             {CompanySlogan}</p>
                     </div>
                     <div className="avatar">
@@ -54,21 +54,21 @@ const JobDetails = () => {
                 </div>
 
                 <div className="mt-2">
-                    <p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer hover:underline" tabIndex="0" role="link">
+                    <p className="text-xl font-bold text-gray-700  hover:text-gray-600  cursor-pointer hover:underline" tabIndex="0" role="link">
                         Description
                     </p>
                     {DetailDescription}
                 </div>
                 <div className="mt-5">
-                    <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Salary: {Salary}</p>
-                    <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Applied: {AppliedCount}</p>
-                    <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Category: <span className="font-semibold">{Category}</span></p>
+                    <p className="text-lg  text-gray-700  hover:text-gray-600 ">Salary: {Salary}</p>
+                    <p className="text-lg  text-gray-700  hover:text-gray-600 ">Applied: {AppliedCount}</p>
+                    <p className="text-lg  text-gray-700  hover:text-gray-600 ">Category: <span className="font-semibold">{Category}</span></p>
                 </div>
                 <div className="mt-1 flex justify-between items-end ">
                     <div>
-                        <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Application Start: {ApplicationStartDate}</p>
-                        <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Application End: {ApplicationEndDate}</p>
-                        <p className="text-lg  text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">Posted By: {LoggedInUser}</p>
+                        <p className="text-lg  text-gray-700  hover:text-gray-600 ">Application Start: {ApplicationStartDate}</p>
+                        <p className="text-lg  text-gray-700  hover:text-gray-600 ">Application End: {ApplicationEndDate}</p>
+                        <p className="text-lg  text-gray-700  hover:text-gray-600 ">Posted By: {LoggedInUser}</p>
 
                     </div>
                     {/* <button className="btn btn-primary ">Apply</button> */}
