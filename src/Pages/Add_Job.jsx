@@ -12,6 +12,7 @@ const Add_Job = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [deadlineDate, setDeadlineDate] = useState(new Date());
     const [AppliedCount, setAppliedCount] = useState(0);
+
     const { user } = useAuth();
     const { email } = user;
     const axios = useAxios();
@@ -40,7 +41,7 @@ const Add_Job = () => {
             ApplicationEndDate: Deadline,
             DetailDescription: JobDetails,
             JobBanner: photo,
-            AppliedCount: AppliedCount,
+            AppliedCount: parseFloat(AppliedCount),
             CompanyLogo: logo,
             CompanySlogan: CompanySlogan,
             postedEmail: email,
@@ -92,7 +93,7 @@ const Add_Job = () => {
                             </div>
                         </div>
                         {/* form Date row */}
-                        
+
                         <div className="flex md:flex mb-8 gap-4">
                             <div className="form-control md:w-1/2">
                                 <label className="label">

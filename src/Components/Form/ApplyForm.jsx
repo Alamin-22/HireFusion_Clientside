@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { useState } from "react";
 import moment from "moment";
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const ApplyForm = ({ job }) => {
@@ -14,30 +15,33 @@ const ApplyForm = ({ job }) => {
     const { _id, JobTitle, CompanyLogo, Category, Salary, AppliedCount, } = job;
     const [applicants, setApplicants] = useState(AppliedCount)
 
-
+    const navigate = useNavigate();
     const currentDate = moment();
     const SubmitDate = currentDate.format('DD-MM-YYYY');
-    const sendAutoEmail = () => {
-        
-        emailjs.init('N48nn4Ng8dHmiDE2L');
-      
-        
-        const emailParams = {
-          to_email: email,
-          message: 'Thank you for submitting your job application. We have received it. We will Contact you soon!!',
-         
-        };
-      
-        
-        emailjs.send('service_0oagj3a', 'template_jtt62qb', emailParams)
-          .then((result) => {
-            console.log('Autoresponder email sent successfully:', result.text);
-          })
-          .catch((error) => {
-            console.error('Failed to send the autoresponder email:', error);
-          });
-      };
-      
+
+
+
+    // const sendAutoEmail = () => {
+
+    //     emailjs.init('N48nn4Ng8dHmiDE2L');
+
+
+    //     const emailParams = {
+    //       to_email: email,
+    //       message: 'Thank you for submitting your job application. We have received it. We will Contact you soon!!',
+
+    //     };
+
+
+    //     emailjs.send('service_0oagj3a', 'template_jtt62qb', emailParams)
+    //       .then((result) => {
+    //         console.log('Autoresponder email sent successfully:', result.text);
+    //       })
+    //       .catch((error) => {
+    //         console.error('Failed to send the autoresponder email:', error);
+    //       });
+    //   };
+
 
 
 
@@ -56,8 +60,9 @@ const ApplyForm = ({ job }) => {
             .then(res => {
                 Swal.fire("Submitted!", "Application Successfully Submitted", "success")
                 console.log(res.data)
+                navigate("/")
                 // to send auto email
-                sendAutoEmail();
+                // sendAutoEmail();
 
             })
             .catch(error => {
